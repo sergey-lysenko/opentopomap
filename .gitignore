@@ -1,0 +1,8 @@
+/src/OpenTopoMap*
+/src/*.zip
+/src/*.py
+/src/mod_tile*
+/src/osm2pgsql*
+/src/phyghtmap*
+/var/data*
+/var/srtm*

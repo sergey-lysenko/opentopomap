@@ -5,6 +5,8 @@ m=`cat $dir/etc/maps`
 r=`cat $dir/etc/resolutions`
 c=`cat $dir/etc/cresolutions`
  
+start=`date +"%s"`
+ 
 echo " "
 echo "--- Downloding height data files ---"
 echo " "
@@ -69,3 +71,5 @@ pushd $dir/var/srtm
  popd
 popd
 
+finish=`date +"%s"`
+echo "$0 execution took `bc <<< ${finish}-${start}` seconds"

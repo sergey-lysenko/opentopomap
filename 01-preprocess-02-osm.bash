@@ -5,6 +5,8 @@ c=`cat $dir/etc/country`
 r=`cat $dir/etc/region`
 file="$c-latest.osm.pbf"
 
+start=`date +"%s"`
+
 echo " "
 echo "--- Downloading '$file' map data ---"
 echo " "
@@ -21,3 +23,6 @@ pushd $dir/var/data
  echo " "
  sudo -u postgres osm2pgsql --slim -d gis -C 12000 --number-processes 10 --style $dir/src/OpenTopoMap/mapnik/osm2pgsql/opentopomap.style $dir/var/data/$file
 popd
+
+finish=`date +"%s"`
+echo "$0 execution took `bc <<< ${finish}-${start}` seconds"

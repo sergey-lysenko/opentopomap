@@ -2,6 +2,8 @@
 
 dir="$( dirname -- "$( readlink -f -- "$0"; )"; )"
 
+start=`date +"%s"`
+
 sedit () {
  sed "$1" $2 > $2.new
  diff $2 $2.new
@@ -49,3 +51,6 @@ pushd $dir/src/OpenTopoMap/mapnik/tools/
  mkdir -p $dir/src/OpenTopoMap/mapnik/dem && cd $dir/src/OpenTopoMap/mapnik/dem
  ln -s $dir/var/data/*.tif .
 popd
+
+finish=`date +"%s"`
+echo "$0 execution took `bc <<< ${finish}-${start}` seconds"
