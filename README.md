@@ -35,5 +35,8 @@ Goal of this repository is to automate steps described in https://github.com/der
 
 - contours are stored in separate database for easier handling of changes and updates
 - added patching of phyghtmap to be compatible with gdal 3.x (added handling of reversed lat/lon)
-- utilized phyghtmap's --simplifyContoursEpsilon parameter which simplifies contours. Without this parameter, a lot of noice added to generated data as well as lines are too "blocky". Amount of simplificatiobn is configurable
-- activated simplification reduces amount of required RAM and size of generated data, but **increases runtime significantly**.
+- utilized phyghtmap's --simplifyContoursEpsilon parameter which simplifies contours. Without this parameter, a lot of noice added to generated data as well as lines are too "blocky"
+- аmount of simplificatiobn is configurable by changind `./etc/contours-epsilon` parameter
+- recommended values are between 0.0001 and 0.0005
+- setting 0.0000 does not deactivate simplification, but sets it to removing of extra geometry only
+- activated simplification reduces amount of required RAM and size of generated data, but **increases runtime significantly**
