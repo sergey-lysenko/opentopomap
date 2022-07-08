@@ -10,3 +10,8 @@ for file in $dir/00-install-*;
   do
   $file
   done
+
+pushd $dir
+ df -h
+ du -h --max-depth=1
+popd
