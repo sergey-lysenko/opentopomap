@@ -1,0 +1,30 @@
+*** OpenTopoMap/mapnik/styles-otm/hillshade.xml	2022-07-08 07:57:16.756550300 +0300
+--- patch.dev/OpenTopoMap/mapnik/styles-otm/hillshade.xml	2022-06-25 18:10:11.535672386 +0300
+***************
+*** 36,38 ****
+  		&minscale_zoom8;
+! 		<RasterSymbolizer comp-op="grain-merge" opacity="0.9" scaling="bilinear" />
+  	</Rule>
+--- 36,38 ----
+  		&minscale_zoom8;
+! 		<RasterSymbolizer comp-op="grain-merge" opacity="0.9" scaling="bicubic" />
+  	</Rule>
+***************
+*** 52,54 ****
+  		&minscale_zoom17;
+! 		<RasterSymbolizer comp-op="grain-merge" opacity="0.83" scaling="bilinear" />
+  	</Rule>
+--- 52,54 ----
+  		&minscale_zoom17;
+! 		<RasterSymbolizer comp-op="grain-merge" opacity="0.83" scaling="bicubic" />
+  	</Rule>
+***************
+*** 59,62 ****
+  		<Parameter name="type">gdal</Parameter>
+! 		<!--Parameter name="file">dem/hillshade-90.tif</Parameter-->
+! 		<Parameter name="file">dem/hillshade-30m-jpeg.tif</Parameter>
+  		<Parameter name="format">tiff</Parameter>
+--- 59,61 ----
+  		<Parameter name="type">gdal</Parameter>
+! 		<Parameter name="file">dem/hillshade-90.tif</Parameter>
+  		<Parameter name="format">tiff</Parameter>

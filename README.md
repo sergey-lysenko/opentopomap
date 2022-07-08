@@ -1,6 +1,6 @@
 # opentopomap
 
-v.0.1.1
+v.0.1.2
 
 Goal of this repository is to automate steps described in https://github.com/der-stefan/OpenTopoMap/blob/master/mapnik/README.md
 
@@ -21,7 +21,7 @@ Goal of this repository is to automate steps described in https://github.com/der
 
 ## Additional Information about diffenences with original installation procedure
 
-- added update of plugins_dir parameter in renderd.conf file
+- added update of **plugins_dir** parameter in `renderd.conf` file
 - currently there's a known issue with `./update_isolations.sh` not working as expected, this is currently being investigated
 - renderd executed by postgres user, while user account used for installation does not matter/used (except that it must be in sudoers list)
 
@@ -29,7 +29,7 @@ Goal of this repository is to automate steps described in https://github.com/der
 
 - jpeg compression of rasters was removed. Is was causing holes in dark sections of hillshades
 - hillshades scaling for zoom8 and more set to bicubic instead of bilinear, which was causing visible square artifacts in darker shades
-- generation of 60m and 30m data was added as well as correspondent hillshade styles, but those were commented as of now, because of low quality of rasters. Way to produce more valid high resolition hillshades is under inverstigation.
+- generation of 60m and 30m data was added as well as correspondent hillshade styles, but those aren't used as of now, because of low quality of rasters. Way to produce more valid high resolition hillshades is under inverstigation.
 
 ### Contours
 
@@ -37,7 +37,7 @@ Goal of this repository is to automate steps described in https://github.com/der
 - added patching of phyghtmap to be compatible with version 3.x of gdal (added handling of reversed lat/lon)
 - utilized phyghtmap's --simplifyContoursEpsilon parameter which simplifies contours. Without this parameter, generated contours contain a lot of noice data as well as lines are too "blocky"
 - аmount of simplification is configurable by changing of `./etc/contours-epsilon` parameter
-- recommended values are between 0.0001 and 0.0005
-- setting of 0.0000 does not deactivate simplification, but sets it to remove extra geometry only
+- recommended values are between **0.0001** and **0.0005**
+- setting of **0.0000** does not deactivate simplification, but sets it to remove extra geometry only
 - activated simplification reduces amount of required RAM and size of generated data, but **increases runtime significantly**
 - to deactivate simplification, remove `./etc/contours-epsilon` file completely
